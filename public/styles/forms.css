@@ -1,0 +1,70 @@
+form hr {
+    border-color: var(--color-primary-200);
+    margin: var(--space-4);
+}
+
+label {
+    color: var(--color-gray-100);
+    display: block;
+    margin: var(--space-2) 0;
+    margin-left: .5rem;
+
+}
+
+input, textarea {
+    font: inherit;
+    padding: var(--space-2);
+    border-radius: var(--border-radius-small);
+    border: none;
+    width: 90%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#image {
+    cursor: pointer;
+}
+
+#control-btns {
+    padding: 1rem 0;
+}
+
+#control-btns button {
+    margin-right: .5rem;
+}
+
+#image-upload-control {
+    width: 90%;
+    background-color: #675f5f;
+    border-radius: var(--border-radius-small);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#image-upload-control input {
+    max-width: 14rem;
+}
+
+#image-upload-control img {
+    display: none;
+    margin-left: -1rem;
+    padding-top: .35rem;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: var(--border-radius-small);
+}
+
+@media (min-width: 27rem) {
+    #image-upload-control input {
+        max-width: 22rem;
+    }
+
+    #image-upload-control img {
+        margin-left: -2.5rem;
+    }
+}

@@ -1,0 +1,24 @@
+<%- include('../../shared/includes/head', { pageTitle: product.title + ' | WDE' }) %>
+<link rel="stylesheet" href="/styles/products.css">
+<script src="/scripts/cart-management.js" defer></script>
+</head>
+<body>
+<%- include('../../shared/includes/header') %>
+<main id="products-details">
+    <h1>All Products</h1>
+    <header id="product-data">
+        <img src="<%= product.imageData.dbUrl %>"
+             alt="<%= product.title %>"
+        >
+        <div id="product-info">
+            <h1><%= product.title %></h1>
+            <p><%= product.price %></p>
+            <button class="btn" data-productid="<%= product.id %>"
+                    data-csrftoken="<%= locals.csrfToken %>"
+            >Add to Cart</button>
+        </div>
+    </header>
+    <p id="product-description"><%= product.description %></p>
+</main>
+<%- include('../../shared/includes/footer') %>
+
