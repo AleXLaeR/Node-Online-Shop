@@ -47,7 +47,7 @@ app.use('/products', protectRoutesMiddleware, productRoutes);
 app.use('/orders', protectRoutesMiddleware, orderRoutes);
 app.use('/', baseRoutes, authRoutes, errorRoutes);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 db.connectToDatabase()
     .then(() => {
