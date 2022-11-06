@@ -47,9 +47,11 @@ app.use('/products', protectRoutesMiddleware, productRoutes);
 app.use('/orders', protectRoutesMiddleware, orderRoutes);
 app.use('/', baseRoutes, authRoutes, errorRoutes);
 
+const PORT = process.env.PORT || 8080;
+
 db.connectToDatabase()
     .then(() => {
-        app.listen(3000);
+        app.listen(PORT);
     })
     .catch((error) => {
         console.log(`Failed to connect to the database!\n${error}`);

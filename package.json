@@ -4,9 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "AleX1LaeR",
   "license": "ISC",
   "dependencies": {
@@ -23,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
