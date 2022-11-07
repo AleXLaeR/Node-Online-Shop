@@ -1,5 +1,6 @@
 const mongodb = require('mongodb');
 const {mongoDBConnString, databaseName} = require("../config/config");
+const {MongoClient, ServerApiVersion} = require("mongodb");
 
 class MongoDBConnectionError extends Error {
     constructor(message) {
@@ -11,9 +12,10 @@ class MongoDBConnectionError extends Error {
 let database;
 
 async function connectToDatabase() {
-    const client = await mongodb
-        .MongoClient
-        .connect(mongoDBConnString);
+    const client = new MongoClient(
+        process.env.MONGODB_URI || mongoDBConnString,
+        { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    await client.connect((error) => console.log(error));
     database = client.db(databaseName);
 }
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const expressSession = require('express-session');
 const path = require('path');
+require('dotenv').config();
 
 const csrf = require('csurf');
 const sessionConfig = require('./config/session');
@@ -47,7 +48,7 @@ app.use('/products', protectRoutesMiddleware, productRoutes);
 app.use('/orders', protectRoutesMiddleware, orderRoutes);
 app.use('/', baseRoutes, authRoutes, errorRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 db.connectToDatabase()
     .then(() => {
